@@ -1,11 +1,16 @@
+// variables for cleaner code
 const playerSelectRock = document.querySelector('.rock-img');
 const playerSelectPaper = document.querySelector('.paper-img');
 const playerSelectScissors = document.querySelector('.scissors-img');
 const playerFrameImg = document.getElementById('player-img');
 const computerFrameImg = document.getElementById('computer-img');
-// Function for computer's turn
 
-// Computer's turn implemented (definitely not the cleanest solution)
+// Score variables
+const playerScore = 0;
+const computerScore = 0;
+
+// Function for computer's turn (definitely not the cleanest solution)
+
 const computersTurn = function () {
   const computerRandom = Math.trunc(Math.random() * 3) + 1;
   if (computerRandom === 1) {
