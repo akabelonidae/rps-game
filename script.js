@@ -41,10 +41,10 @@ playerSelectionScissors.addEventListener('click', scissorsSelected);
 // Function for computer selection (probably not the cleanest solution)
 const computersTurn = function (playerSelection) {
   // Computer's turn
-  const computerSelect = Math.floor(Math.random() * 3);
-  if (computerSelect === 0) {
+  const computerSelect = Math.trunc(Math.random() * 3 + 1);
+  if (computerSelect === 1) {
     computerFrameImg.src = 'img/blackrock-rotated.png';
-  } else if (computerSelect === 1) {
+  } else if (computerSelect === 2) {
     computerFrameImg.src = 'img/blackpaper-rotated.png';
   } else {
     computerFrameImg.src = 'img/blackscissors-rotated.png';
@@ -87,8 +87,8 @@ const computersTurn = function (playerSelection) {
     document.querySelector('.middle-text').style.display = 'none';
 
     document.querySelector('#title').textContent = message;
-    document.querySelector('#title').style.marginTop = '35vh';
-    document.querySelector('#title').style.fontSize = '10rem';
+    document.querySelector('#title').style.marginTop = '30vh';
+    document.querySelector('#title').style.fontSize = '7rem';
 
     document.querySelector('body').style.backgroundColor = backgroundColor;
     document.getElementById('play-again').style.display = 'block';
