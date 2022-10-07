@@ -48,18 +48,11 @@ body {
   display: flex;
   justify-content: center;
 }
-.img {
+.frame-img,
+.selection-img {
   height: 150px;
 }
-.rock-img:hover {
+.selection-img:hover {
   background-color: blue;
-  filter: invert(1);
-}
-.paper-img:hover {
-  background-color: red;
-  filter: invert(1);
-}
-.scissors-img:hover {
-  background-color: green;
-  filter: invert(1);
+  filter: invert();
 }

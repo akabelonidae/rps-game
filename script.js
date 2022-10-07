@@ -89,6 +89,9 @@ const computersTurn = function (playerSelection) {
     document.querySelector('.middle-text').style.display = 'none';
 
     document.querySelector('#title').textContent = message;
+    document.querySelector('#title').style.marginTop = '45%';
+    document.querySelector('#title').style.fontSize = '10rem';
+
     document.querySelector('body').style.backgroundColor = backgroundColor;
   };
 
