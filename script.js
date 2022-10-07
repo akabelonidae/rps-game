@@ -41,10 +41,10 @@ playerSelectionScissors.addEventListener('click', scissorsSelected);
 // Function for computer selection (probably not the cleanest solution)
 const computersTurn = function (playerSelection) {
   // Computer's turn
-  const computerSelect = Math.trunc(Math.random() * 3) + 1;
-  if (computerSelect === 1) {
+  const computerSelect = Math.floor(Math.random() * 3);
+  if (computerSelect === 0) {
     computerFrameImg.src = 'img/blackrock-rotated.png';
-  } else if (computerSelect === 2) {
+  } else if (computerSelect === 1) {
     computerFrameImg.src = 'img/blackpaper-rotated.png';
   } else {
     computerFrameImg.src = 'img/blackscissors-rotated.png';
@@ -65,7 +65,7 @@ const computersTurn = function (playerSelection) {
     (playerSelection === 2 && computerSelect === 1) ||
     (playerSelection === 3 && computerSelect === 2)
   ) {
-    playerScore = playerScore + 1;
+    playerScore++;
     playerScoreText.textContent = playerScore;
     middleText.textContent = 'You won!';
     middleText.style.color = 'green';
@@ -74,7 +74,7 @@ const computersTurn = function (playerSelection) {
 
     // Lose
   } else {
-    computerScore = computerScore + 1;
+    computerScore++;
     computerScoreText.textContent = computerScore;
     middleText.textContent = 'You lost!';
     middleText.style.color = 'red';
@@ -89,10 +89,11 @@ const computersTurn = function (playerSelection) {
     document.querySelector('.middle-text').style.display = 'none';
 
     document.querySelector('#title').textContent = message;
-    document.querySelector('#title').style.marginTop = '45vh';
+    document.querySelector('#title').style.marginTop = '35vh';
     document.querySelector('#title').style.fontSize = '10rem';
 
     document.querySelector('body').style.backgroundColor = backgroundColor;
+    document.getElementById('play-again').style.display = 'block';
   };
 
   if (playerScore === 5) {
@@ -101,3 +102,9 @@ const computersTurn = function (playerSelection) {
     winLostMessage(`You lost! ${playerScore} to ${computerScore}`, 'red');
   }
 };
+
+// Play again
+
+document.getElementById('play-again').addEventListener('click', function () {
+  window.location.reload();
+});
