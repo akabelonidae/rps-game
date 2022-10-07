@@ -18,51 +18,44 @@ let playerSelection;
 const rockSelected = function () {
   playerSelection = 1;
   playerFrameImg.src = 'img/blackrock.png';
-  playerFrameImg.style.height = '150px';
   computersTurn(playerSelection);
 };
 
 const paperSelected = function () {
   playerSelection = 2;
   playerFrameImg.src = 'img/blackpaper.png';
-  playerFrameImg.style.height = '150px';
   computersTurn(playerSelection);
 };
 
 const scissorsSelected = function () {
   playerSelection = 3;
-
   playerFrameImg.src = 'img/blackscissors.png';
-  playerFrameImg.style.height = '150px';
   computersTurn(playerSelection);
 };
 
 // AEL for rock paper scissors
-playerSelectionPaper.addEventListener('click', paperSelected);
 playerSelectionRock.addEventListener('click', rockSelected);
+playerSelectionPaper.addEventListener('click', paperSelected);
 playerSelectionScissors.addEventListener('click', scissorsSelected);
 
-// Function for computer selection (hardcoded and probably not the cleanest solution)
+// Function for computer selection (probably not the cleanest solution)
 const computersTurn = function (playerSelection) {
   // Computer's turn
   const computerSelect = Math.trunc(Math.random() * 3) + 1;
   if (computerSelect === 1) {
     computerFrameImg.src = 'img/blackrock-rotated.png';
-    computerFrameImg.style.height = '150px';
   } else if (computerSelect === 2) {
     computerFrameImg.src = 'img/blackpaper-rotated.png';
-    computerFrameImg.style.height = '150px';
   } else {
     computerFrameImg.src = 'img/blackscissors-rotated.png';
-    computerFrameImg.style.height = '150px';
   }
+
   //   Score implementation
 
   // Draw
   if (playerSelection === computerSelect) {
     middleText.textContent = 'Draw!';
     middleText.style.color = 'white';
-    document.querySelector('.player-frame').style.border = '10px solid white';
     document.querySelector('.player-score').style.color = 'white';
     document.querySelector('.computer-score').style.color = 'white';
 
@@ -73,23 +66,20 @@ const computersTurn = function (playerSelection) {
     (playerSelection === 3 && computerSelect === 2)
   ) {
     playerScore = playerScore + 1;
-    playerScoreText.textContent = `Player Score: ${playerScore}`;
+    playerScoreText.textContent = playerScore;
     middleText.textContent = 'You won!';
     middleText.style.color = 'green';
-    document.querySelector('.player-frame').style.border = '10px solid green';
     document.querySelector('.player-score').style.color = 'green';
     document.querySelector('.computer-score').style.color = 'white';
 
     // Lose
   } else {
     computerScore = computerScore + 1;
-    computerScoreText.textContent = `Computer Score: ${computerScore}`;
+    computerScoreText.textContent = computerScore;
     middleText.textContent = 'You lost!';
     middleText.style.color = 'red';
-    document.querySelector('.player-frame').style.border = '10px solid white';
-    document.querySelector('.player-score').style.color = 'white';
-    document.querySelector('.computer-frame').style.border = '10px solid red';
     document.querySelector('.computer-score').style.color = 'red';
+    document.querySelector('.player-score').style.color = 'white';
   }
 
   //  Win/lose implementation
@@ -102,9 +92,9 @@ const computersTurn = function (playerSelection) {
     document.querySelector('body').style.backgroundColor = backgroundColor;
   };
 
-  if (playerScore === 3) {
+  if (playerScore === 5) {
     winLostMessage(`You won! ${playerScore} to ${computerScore}`, 'green');
-  } else if (computerScore === 3) {
+  } else if (computerScore === 5) {
     winLostMessage(`You lost! ${playerScore} to ${computerScore}`, 'red');
   }
 };

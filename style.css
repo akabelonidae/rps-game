@@ -24,11 +24,6 @@ body {
   margin-top: 2rem;
 }
 
-.score {
-  font-size: 3rem;
-  margin-top: 2rem;
-}
-
 .text {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -52,9 +47,19 @@ body {
 .selection {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
-  margin-right: 2rem;
 }
 .img {
-  height: 125px;
+  height: 150px;
+}
+.rock-img:hover {
+  background-color: blue;
+  filter: invert(1);
+}
+.paper-img:hover {
+  background-color: red;
+  filter: invert(1);
+}
+.scissors-img:hover {
+  background-color: green;
+  filter: invert(1);
 }
