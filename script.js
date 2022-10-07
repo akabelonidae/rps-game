@@ -42,6 +42,7 @@ playerSelectionScissors.addEventListener('click', scissorsSelected);
 const computersTurn = function (playerSelection) {
   // Computer's turn
   const computerSelect = Math.trunc(Math.random() * 3 + 1);
+
   if (computerSelect === 1) {
     computerFrameImg.src = 'img/blackrock-rotated.png';
   } else if (computerSelect === 2) {
@@ -81,7 +82,7 @@ const computersTurn = function (playerSelection) {
   }
 
   //  Win/lose implementation
-  const winLostMessage = function (message, backgroundColor) {
+  const winLoseMessage = function (message, backgroundColor) {
     document.querySelector('#main-section').style.display = 'none';
     document.querySelector('.img-selection').style.display = 'none';
     document.querySelector('.middle-text').style.display = 'none';
@@ -95,9 +96,9 @@ const computersTurn = function (playerSelection) {
   };
 
   if (playerScore === 5) {
-    winLostMessage(`You won! ${playerScore} to ${computerScore}`, 'green');
+    winLoseMessage(`You won! ${playerScore} to ${computerScore}`, 'green');
   } else if (computerScore === 5) {
-    winLostMessage(`You lost! ${playerScore} to ${computerScore}`, 'red');
+    winLoseMessage(`You lost! ${playerScore} to ${computerScore}`, 'red');
   }
 };
 
