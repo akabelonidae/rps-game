@@ -68,7 +68,6 @@ const computersTurn = function (playerSelection) {
     playerScore++;
     playerScoreText.textContent = playerScore;
     middleText.textContent = 'You won!';
-    middleText.style.color = 'green';
     document.querySelector('.player-score').style.color = 'green';
     document.querySelector('.computer-score').style.color = 'white';
 
@@ -77,7 +76,6 @@ const computersTurn = function (playerSelection) {
     computerScore++;
     computerScoreText.textContent = computerScore;
     middleText.textContent = 'You lost!';
-    middleText.style.color = 'red';
     document.querySelector('.computer-score').style.color = 'red';
     document.querySelector('.player-score').style.color = 'white';
   }
