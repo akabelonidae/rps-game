@@ -53,7 +53,7 @@ body {
   height: 150px;
 }
 .selection-img:hover {
-  background-color: blue;
+  background-color: black;
   filter: invert();
 }
 
