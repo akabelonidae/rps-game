@@ -2,8 +2,8 @@
 const playerSelectionRock = document.querySelector('.rock-img');
 const playerSelectionPaper = document.querySelector('.paper-img');
 const playerSelectionScissors = document.querySelector('.scissors-img');
-const playerFrameImg = document.getElementById('player-img');
-const computerFrameImg = document.getElementById('computer-img');
+const playerFrameImg = document.querySelector('.player-img');
+const computerFrameImg = document.querySelector('.computer-img');
 
 const playerScoreText = document.querySelector('.player-score');
 const computerScoreText = document.querySelector('.computer-score');
@@ -17,14 +17,14 @@ let playerSelection;
 // Functions for selecting rock paper and scissors
 const rockSelected = function () {
   playerSelection = 1;
-  playerFrameImg.src = 'img/rock.png';
+  playerFrameImg.src = 'img/blackrock.png';
   playerFrameImg.style.height = '150px';
   computersTurn(playerSelection);
 };
 
 const paperSelected = function () {
   playerSelection = 2;
-  playerFrameImg.src = 'img/paper.png';
+  playerFrameImg.src = 'img/blackpaper.png';
   playerFrameImg.style.height = '150px';
   computersTurn(playerSelection);
 };
@@ -32,7 +32,7 @@ const paperSelected = function () {
 const scissorsSelected = function () {
   playerSelection = 3;
 
-  playerFrameImg.src = 'img/scissors.png';
+  playerFrameImg.src = 'img/blackscissors.png';
   playerFrameImg.style.height = '150px';
   computersTurn(playerSelection);
 };
@@ -42,18 +42,18 @@ playerSelectionPaper.addEventListener('click', paperSelected);
 playerSelectionRock.addEventListener('click', rockSelected);
 playerSelectionScissors.addEventListener('click', scissorsSelected);
 
-// Function for computer's turn (definitely not the cleanest solution)
+// Function for computer selection (hardcoded and probably not the cleanest solution)
 const computersTurn = function (playerSelection) {
   // Computer's turn
   const computerSelect = Math.trunc(Math.random() * 3) + 1;
   if (computerSelect === 1) {
-    computerFrameImg.src = 'img/rock-rotated.png';
+    computerFrameImg.src = 'img/blackrock-rotated.png';
     computerFrameImg.style.height = '150px';
   } else if (computerSelect === 2) {
-    computerFrameImg.src = 'img/paper-rotated.png';
+    computerFrameImg.src = 'img/blackpaper-rotated.png';
     computerFrameImg.style.height = '150px';
   } else {
-    computerFrameImg.src = 'img/scissors-rotated.png';
+    computerFrameImg.src = 'img/blackscissors-rotated.png';
     computerFrameImg.style.height = '150px';
   }
   //   Score implementation
@@ -64,7 +64,6 @@ const computersTurn = function (playerSelection) {
     middleText.style.color = 'white';
     document.querySelector('.player-frame').style.border = '10px solid white';
     document.querySelector('.player-score').style.color = 'white';
-    document.querySelector('.computer-frame').style.border = '10px solid white';
     document.querySelector('.computer-score').style.color = 'white';
 
     // Win
@@ -79,7 +78,6 @@ const computersTurn = function (playerSelection) {
     middleText.style.color = 'green';
     document.querySelector('.player-frame').style.border = '10px solid green';
     document.querySelector('.player-score').style.color = 'green';
-    document.querySelector('.computer-frame').style.border = '10px solid white';
     document.querySelector('.computer-score').style.color = 'white';
 
     // Lose

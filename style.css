@@ -12,29 +12,26 @@ body {
 
 #title {
   text-align: center;
-  font-size: 5rem;
-  font-weight: 500;
-}
-
-.score {
-  margin-top: 0.75rem;
-  display: flex;
-  font-size: 2.5rem;
-  text-align: center;
-  align-items: center;
+  font-size: 4rem;
+  font-weight: 600;
 }
 
 #main-section {
   display: flex;
   justify-content: center;
+  gap: 2rem;
   align-items: center;
-  margin-top: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 5rem;
+  margin-top: 2rem;
 }
+
+.score {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
 .text {
   font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .frame {
@@ -43,7 +40,7 @@ body {
   align-items: center;
   height: 200px;
   width: 200px;
-  border: 10px solid white;
+  background-color: white;
 }
 .middle-text {
   font-size: 3rem;
@@ -55,7 +52,9 @@ body {
 .selection {
   display: flex;
   justify-content: center;
+  margin-top: 1.5rem;
+  margin-right: 2rem;
 }
 .img {
-  height: 150px;
+  height: 125px;
 }
