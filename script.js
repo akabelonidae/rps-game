@@ -56,24 +56,45 @@ const computersTurn = function (playerSelection) {
     computerFrameImg.src = 'img/scissors-rotated.png';
     computerFrameImg.style.height = '150px';
   }
-  //   Win lose implementation
+  //   Score implementation
+
+  // Draw
   if (playerSelection === computerSelect) {
     middleText.textContent = 'Draw!';
+    middleText.style.color = 'white';
+    document.querySelector('.player-frame').style.border = '10px solid white';
+    document.querySelector('.player-score').style.color = 'white';
+    document.querySelector('.computer-frame').style.border = '10px solid white';
+    document.querySelector('.computer-score').style.color = 'white';
+
+    // Win
   } else if (
-    (playerSelection === 1 && computerSelect === 2) ||
-    (playerSelection === 2 && computerSelect === 3) ||
-    (playerSelection === 3 && computerSelect === 1)
+    (playerSelection === 1 && computerSelect === 3) ||
+    (playerSelection === 2 && computerSelect === 1) ||
+    (playerSelection === 3 && computerSelect === 2)
   ) {
-    computerScore = computerScore + 1;
-    computerScoreText.textContent = `Computer Score: ${computerScore}`;
-    middleText.textContent = 'You lost!';
-  } else {
     playerScore = playerScore + 1;
     playerScoreText.textContent = `Player Score: ${playerScore}`;
     middleText.textContent = 'You won!';
+    middleText.style.color = 'green';
+    document.querySelector('.player-frame').style.border = '10px solid green';
+    document.querySelector('.player-score').style.color = 'green';
+    document.querySelector('.computer-frame').style.border = '10px solid white';
+    document.querySelector('.computer-score').style.color = 'white';
+
+    // Lose
+  } else {
+    computerScore = computerScore + 1;
+    computerScoreText.textContent = `Computer Score: ${computerScore}`;
+    middleText.textContent = 'You lost!';
+    middleText.style.color = 'red';
+    document.querySelector('.player-frame').style.border = '10px solid white';
+    document.querySelector('.player-score').style.color = 'white';
+    document.querySelector('.computer-frame').style.border = '10px solid red';
+    document.querySelector('.computer-score').style.color = 'red';
   }
 
-  //   Implementation of win/lose
+  //  Win/lose implementation
   const winLostMessage = function (message, backgroundColor) {
     document.querySelector('#main-section').style.display = 'none';
     document.querySelector('.img-selection').style.display = 'none';
@@ -84,8 +105,8 @@ const computersTurn = function (playerSelection) {
   };
 
   if (playerScore === 3) {
-    winLostMessage('You won!', 'green');
+    winLostMessage(`You won! ${playerScore} to ${computerScore}`, 'green');
   } else if (computerScore === 3) {
-    winLostMessage('You lost!', 'red');
+    winLostMessage(`You lost! ${playerScore} to ${computerScore}`, 'red');
   }
 };
