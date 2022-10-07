@@ -5,22 +5,30 @@
   box-sizing: border-box;
   font-family: 'VT323';
 }
+body {
+  background-color: black;
+  color: white;
+}
+
 #title {
   text-align: center;
   font-size: 5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   font-weight: 600;
 }
 
 .score {
+  margin-top: 0.75rem;
+  display: flex;
   font-size: 2.5rem;
   text-align: center;
+  align-items: center;
 }
-.main-section {
+
+#main-section {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   gap: 5rem;
@@ -35,11 +43,11 @@
   align-items: center;
   height: 200px;
   width: 200px;
-  border: 5px solid black;
+  border: 5px solid white;
 }
 .middle-text {
-  margin-top: 2rem;
   font-size: 3rem;
+  margin-top: 1.5rem;
 }
 .text {
   text-align: center;
