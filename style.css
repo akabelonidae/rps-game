@@ -68,3 +68,17 @@ body {
 #play-again:hover {
   filter: invert();
 }
+/* Github link */
+#github-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 10rem;
+  font-size: 2rem;
+}
+#github-img {
+  filter: invert();
+
+  height: 5rem;
+}
