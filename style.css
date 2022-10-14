@@ -73,12 +73,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  margin-top: 10rem;
-  font-size: 2rem;
+  gap: 1rem;
+  margin-top: 5rem;
+  font-size: 1rem;
 }
 #github-img {
   filter: invert();
 
-  height: 5rem;
+  height: 2rem;
 }
